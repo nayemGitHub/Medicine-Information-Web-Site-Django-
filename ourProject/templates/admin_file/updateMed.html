@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Medicine Information</title>
+    <link rel="stylesheet" href="../../static/admin/style.css">
+</head>
+<body>
+{% include 'admin_file/admin_navbar.html' %}
+{% block content %}
+<section class="admin_container">
+    <div class="form-container">
+        <h1 class="medicine_h1">Edit Medicine Information</h1>
+        {% for i in um %}
+            <form method="post" action="{% url 'update_med_info' i.id %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <label for="medicineName">Medicine Name:</label>
+                <input type="text" id="medicineName" name="medicine_name" class="medicine_form-input" value="{{ i.medicine_title }}" required>
+
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" name="company_name" class="medicine_form-input" value="{{ i.medicine_company_name }}" required>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="med_price" class="medicine_form-input" value="{{ i.medicine_price }}" step="0.01" required>
+
+                <label for="descriptions">Descriptions:</label>
+                <textarea id="descriptions" name="med_descriptions" class="medicine_form-textarea" rows="4" required>{{ i.medicine_discription }}</textarea>
+
+                <label for="image" class="form-file">Upload Image:</label>
+                <input type="file" id="image" name="medicine_image" class="medicine_form-file" accept="image/*">
+
+                <button type="submit" class="medicine_button">Submit</button>
+            </form>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+{% include 'admin_file/admin_footer.html' %}
+</body>
+</html>

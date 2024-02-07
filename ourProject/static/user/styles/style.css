@@ -1,0 +1,504 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+
+/* Banner Start */
+
+.banner-section{
+    width: 100%;
+    height: 100vh;
+    background-image: url("./Background Image/medicine-capsules-global-health-with-geometric-pattern-digital-remix.jpg"),linear-gradient(rgba(48, 175, 186, 0.3),rgba(11, 197, 197, 0.4));
+    background-size: 1600px;
+    background-blend-mode: overlay;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+
+}
+
+.banner-digital{
+    margin: 0 auto;
+}
+
+.banner-title{
+    font-size:86px;
+    font-weight:900;
+    color: white;
+
+}
+.banner-title-digital{
+    color: rgb(21, 136, 136);
+}
+.banner-description{
+    font-size:22px;
+    color: white;
+    width: 50%;
+    margin: 10px auto 10px;
+}
+.btn{
+    padding: 15px 35px;;
+    font-size: 16px;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+}
+.shop-more-btn{
+    background-color:rgb(8, 188, 188);
+    color: white;
+    padding:10px;
+  
+}
+.buttons{
+    padding:10px;
+}
+
+
+
+
+/* Banner End */
+
+
+
+/* Medicine Category start*/
+
+.section-title{
+    text-align: center;
+    font-size: 24px;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    color: rgb(21, 136, 136);
+}
+
+.medicine-container1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 18px;
+    margin-left: 130px !important;
+    margin-right: 50px !important;
+}
+
+#category {
+   width: 170px;
+   height: 170px;
+}
+
+.medicine img {
+    width: 160px; 
+    height: 120px; 
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.medicine-category {
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    margin: auto;
+}
+
+
+.medicine {
+    transition: transform 0.3s ease-in-out;
+}
+
+.medicine:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+/* Medicine Category End*/
+
+/*  Featured Medicine Start */
+
+
+.medicines {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    margin-left: 75px;
+    margin-right: 60px;
+
+}
+#medicines{
+    margin: 30px !important;
+}
+.medicine {
+    width: 240px;
+    padding: 20px;
+    height: 476px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
+
+}
+#medicine{
+    margin: 30px !important;
+}
+
+.medicine .medicine-banner img {
+    width: 224px;
+    height: 140px;
+    background-color: rgb(183, 214, 214);
+}
+
+.medicine-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a.order_btn, .med_btn {
+    padding: 6px;
+    border: 1px solid #cfcbcb;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 5px;
+}
+a.order_btn {
+    background: #efefef;
+    font-size: 16px;
+    color: #016d7a;
+}
+a.add_cart_btn {
+    background: #0a90a1;
+    font-size: 16px;
+    color: white;
+}
+.medicine_button {
+    margin-top: 45px;
+}
+
+.fa-star {
+    margin: 4px 6px;
+    font-size: 12px;
+}
+
+.fa-star.filled {
+    color: #ffc014;
+}
+
+.fa-star.empty {
+    color: #aeaeae;
+}
+
+.add-to-cart-btn {
+    margin-top: 20px;
+    padding: 10px 16px;
+    background-color: rgb(8, 188, 188);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+/*  Featured Medicine Start */
+
+
+
+/* Appointment Section Start */
+
+.appointment-section{
+    width: 75%;
+    padding: 15px;
+    background-color: rgb(10, 144, 161);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin: auto;
+    border-radius: 15px;
+    margin-top: 80px;
+    color: white;
+}
+.call-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-right: 2px solid rgb(184, 184, 184);
+    text-align: center;
+}
+
+.appointment-logo{
+    width:100px;
+    padding: 15px;
+}
+.apointment-descript{
+    padding: 10px;
+    /* width: 75px; */
+    text-align: justify;
+/* border-right: 2px solid gray; */
+}
+.appointment-button{
+    padding: 10px;
+}
+.appointment-button button{
+    padding: 15px 35px;
+    border-radius:25px;
+    border: none;
+}
+
+/* Appointment Section End */
+
+
+
+
+
+
+/* Footer Section Start */
+
+footer{
+    width: 100%;
+    height: 70vh;
+    /* background-color: rgb(11, 133, 149); */
+    background-image: url("./asset/image/footer-bg.png"),linear-gradient(rgb(10, 144, 161),rgba(20, 100, 103, 0.4));
+    background-repeat:no-repeat;
+    background-blend-mode: overlay;
+    color: white;
+    line-height: 1.8em;
+   
+}
+.footer-container{
+    display: flex;
+    width: 75%;
+    height: 60vh;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+    /* padding: 20px; */
+    border-bottom: 1px solid gray;
+}
+.logo-box{
+    width: 25%;
+}
+.logo-box img{
+    width:170px;
+}
+
+.copy{
+    text-align: center;
+    padding: 15px;
+}
+.fa-solid{
+    margin-right: 7px;
+}
+.footer-title{
+    margin-bottom: 30px;
+}
+.icons{
+    /* text-align: center; */
+    margin-top:20px;
+}
+.fa-brands{
+    margin: 10px;
+    font-size:20px;
+}
+
+/* Footer Section End */
+
+
+
+
+/* Navbar Start */
+
+nav a {
+    transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-part a:hover {
+    background-color: #015b67;
+    padding: 10px 21px;
+    border-radius: 50%;
+}
+
+.search-btn, .add-to-cart-btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-btn:hover, .add-to-cart-btn:hover {
+    background-color: #015b67;
+    color: #3e3b3b;
+}
+
+.login-register button {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-register button:hover {
+    background-color: #015b67;
+    padding: 10px 21px;
+    border-radius: 50%;
+}
+
+/* Banner Start */
+
+.btn-more {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-more:hover {
+    background-color: #015b67;
+    padding: 10px 21px;
+    border-radius: 50%;
+}
+
+/* Medicine Category End */
+
+/* Medicine Category start*/
+.med_home_con {
+    height: 745px;
+    overflow: hidden;
+}
+.medicine {
+    transition: transform 0.3s ease-in-out;
+}
+
+.medicine:hover {
+    transform: scale(1.05);
+}
+
+/*  Featured Medicine Start */
+
+.add-to-cart-btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: rgb(8, 188, 188);
+    color: #fff;
+}
+
+/*  Featured Medicine End */
+
+/* Blogs and Healthcare Articles Section Start */
+
+.blog {
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog:hover {
+    transform: scale(1.05);
+}
+
+/* Blogs and Healthcare Articles Section End */
+
+/* Footer Section Start */
+
+.footer-container, .footer-title, .icons {
+    transition: margin 0.3s ease;
+}
+
+.footer-container:hover, .footer-title:hover, .icons:hover {
+    margin-top: 30px;
+}
+
+/* Blogs and Healthcare Articles Section Start */
+
+.blogs {
+    transition: transform 0.3s ease;
+}
+
+.blogs:hover {
+    transform: translateY(-10px); /* Adjust the value based on your preference */
+}
+
+/* Blogs and Healthcare Articles Section End */
+
+/* Footer Section Start */
+
+footer {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+footer:hover {
+    background-color: rgb(11, 133, 149);
+    transform: translateY(-10px); /* Adjust the value based on your preference */
+}
+
+
+/* Blogs and Healthcare Articles Section Start */
+
+.blogs {
+    transition: transform 0.3s ease;
+}
+
+.blogs:hover {
+    transform: translateY(-10px); /* Adjust the value based on your preference */
+}
+
+.blogs:not(:hover) {
+    transition: transform 0.3s ease;
+    transform: translateY(0);
+}
+
+/* Blogs and Healthcare Articles Section End */
+
+/* Footer Section Start */
+
+footer {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+footer:hover {
+    background-color: rgb(11, 133, 149);
+    transform: translateY(-10px); /* Adjust the value based on your preference */
+}
+
+footer:not(:hover) {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: translateY(0);
+}
+
+
+section.medicine-categories {
+    width: 1170px;
+    margin: auto;
+}
+
+
+
+/* Footer Section End */
+
+/* a.shop_now {
+    text-decoration: none;
+    padding: 12px 50px;
+    border: 1px solid #08bcbc;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #0c6060;
+} */
+a.shop-more-btn {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #0c6060;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+
+
+
+
+/* Footer Section End */
+
+/* Footer Section End */
+
+
+
+
+
+
+
+

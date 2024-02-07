@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile</title>
+    <link rel="stylesheet" href="../../static/admin/style.css">
+</head>
+<body>
+{% include 'admin_file/admin_navbar.html' %}
+{% block content %}
+
+    <section class="admin_container">
+        
+        <div class="admin_profile-card ">
+            <img src="{{prof.image.url}}" alt="Profile Image" class="admin_profile-image">
+            <div class="admin_profile-name">{{prof.display_name}}</div>
+            <!-- <div class="admin_profile-role">{{prof.username}}</div> -->
+            <div class="admin_profile-contact">
+                <p class="admin_profile_email">{{prof.admin_email}}</p>
+                <p>{{prof.admin_phone_number}}</p>
+                
+            </div>
+           
+        </div>
+    </section>
+{% endblock %}
+{% include 'admin_file/admin_footer.html' %}
+</body>
+</html>

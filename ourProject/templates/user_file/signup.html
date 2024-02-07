@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medicine</title>
+    <script src="https://kit.fontawesome.com/3c48e661fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../static/user/styles/style.css">
+    <link rel="stylesheet" href="../../static/user/styles/signup.css">
+    <link rel="stylesheet" href="../../static/user/styles/responsib.css">
+    <link rel="stylesheet" href="../../static/user/styles/navbar.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    </style>
+    <script>
+        // script.js
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Password toggle functionality
+    var togglePasswordIcons = document.querySelectorAll(".eyeIcon");
+    
+    togglePasswordIcons.forEach(function (icon) {
+        icon.addEventListener("click", function () {
+            var passwordInput = icon.previousElementSibling;
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                icon.classList.remove("far", "fa-eye");
+                icon.classList.add("far", "fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                icon.classList.remove("far", "fa-eye-slash");
+                icon.classList.add("far", "fa-eye");
+            }
+        });
+    });
+});
+
+    </script>
+</head>
+<body>
+    {% include 'user_file/user_navbar.html' %}
+    {% block content%}
+    <div class="login-container" id="signup">
+        <h2>SignUp</h2>
+        <form class="login-form" action="{% url 'user_signup_page' %}" method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="fullname">Full Nmae:</label>
+                <input type="text" id="username"  name="fullname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username"  name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fullname">Your Email:</label>
+                <input type="email" id="email"  name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone_number">Your Phone Number:</label>
+                <input type="text" id="email"  name="phone_number" placeholder="+880" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password"  name="password" required >
+                <i class="far fa-eye eyeIcon" id="togglePassword"></i>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Confirm Password:</label>
+                <input type="password" id="confirm_password"  name="confirm_password" required >
+                <i class="far fa-eye eyeIcon" id="togglePassword"></i>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Sign Up</button>
+            </div>
+
+            <div class="loginLink">I already Have a Account <a href="{% url 'user_login_page' %}">LogIn</a></div>
+        </form>
+    </div>
+    {% endblock %}
+    {% include 'user_file/user_footer.html' %}
+</body>
+</html>

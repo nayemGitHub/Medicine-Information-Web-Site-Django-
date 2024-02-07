@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Online Medincine Shop</title>
+    <script src="https://kit.fontawesome.com/3c48e661fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../static/user/styles/style.css">
+    <link rel="stylesheet" href="../../static/user/styles/contact.css">
+    <link rel="stylesheet" href="../../static/user/styles/responsib.css">
+    <link rel="stylesheet" href="../../static/user/styles/catagory.css">
+    <link rel="stylesheet" href="../../static/user/styles/blgo.css">
+    <link rel="stylesheet" href="../../static/user/styles/navbar.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      // Add event listener for the "DISCOVER MORE" button
+      var discoverMoreButton = document.querySelector(".btn.btn-more");
+
+      if (discoverMoreButton) {
+          discoverMoreButton.addEventListener("click", function () {
+              // Add your custom functionality here
+              alert("Discover more button clicked!");
+              // You can replace the alert with your own logic.
+          });
+      }
+
+      // Add more event listeners or JavaScript logic as needed.
+  });
+</script>
+</head>
+<body>
+    {% include 'user_file/user_navbar.html' %}
+
+    <header class="header">
+          <!-- Banner Section Start -->
+          <div class="banner-section">
+              <div class="banner-digital">
+                <div>
+                  <h1 class="banner-title">A Online
+                    <span class="banner-title-digital">Medicine</span> Shop You <br />
+                    Can Rely Upon !
+                  </h1>
+                  <p class="banner-description">
+                    "Discover a healthier you with our Online Medicine Shop! Your one-stop destination for all your healthcare needs. Browse a vast range of high-quality medicines, wellness products, and healthcare essentials from the comfort of your home."
+                  </p>
+        
+                  <div class="buttons">
+                    <button class="btn btn-more">DISCOVER MORE</button>
+                    <button class="btn btn-more"><a href="{% url 'medicine_page' %}" style="text-decoration: none; color:#0c6060" class="shop-more-btn">Shop Now</a></button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Banner Section End -->
+    </header>
+
+
+    <main>
+
+        <!-- Medicine Category Section start -->
+  
+          <section class="medicine-categories">
+              <h3 class="section-title">Medicine Categories</h3>
+              <div class="medicine-container1">
+                  <div class="medicine" id="category">
+                      <img src="../../static/user/Category pic/Prescription.jpg" alt="Medicine 1">
+                      <p class="medicine-category">Prescription Medications</p>
+                  </div>
+                  <div class="medicine" id="category">
+                      <img src="../../static/user/Category pic/otc.jpg" alt="Medicine 2">
+                      <p class="medicine-category">OTC Medications</p>
+                  </div>
+                  <div class="medicine" id="category">
+                      <img src="../../static/user/Category pic/women care.jpg" alt="Medicine 3">
+                      <p class="medicine-category">Women's Health</p>
+                  </div>
+                  <div class="medicine" id="category">
+                      <img src="../../static/user/Category pic/baby care.jpg" alt="Medicine 4">
+                      <p class="medicine-category">Baby and Child Care</p>
+                  </div>
+                  <div class="medicine" id="category">
+                      <img src="../../static/user/Category pic/diabetic.jpg" alt="Medicine 5">
+                      <p class="medicine-category">Diabatics Care</p>
+                  </div>
+                  <div class="medicine" id="category">
+                      <img src="../../static/user/Category pic/dental.jpg" alt="Medicine 6">
+                      <p class="medicine-category">Dental Solution</p>
+                  </div>
+                  <div class="medicine" id="category">
+                      <img src="../../static/user/Category pic/health device.jpg" alt="Medicine 1">
+                      <p class="medicine-category">Health Devices & Equipments</p>
+                  </div>
+                  <div class="medicine" id="category">
+                      <img src="../../static/user/Category pic/wellness.jpg" alt="Medicine 2">
+                      <p class="medicine-category">Wellness and Personal Care</p>
+                  </div>
+                  <div class="medicine" id="category">
+                      <img src="../../static/user/Category pic/skincare.jpg" alt="Medicine 3">
+                      <p class="medicine-category">Beauty Products</p>
+                  </div>
+                  <div class="medicine" id="category">
+                      <img src="../../static/user/Category pic/herval.jpg" alt="Medicine 4">
+                      <p class="medicine-category">Alternative and Herbal Remedies</p>
+                  </div>
+                  <div class="medicine" id="category">
+                      <img src="../../static/user/Category pic/pet.jpg" alt="Medicine 5">
+                      <p class="medicine-category">Pet Medications</p>
+                  </div>
+                  <div class="medicine" id="category">
+                      <img src="../../static/user/Category pic/covid.jpg" alt="Medicine 6">
+                      <p class="medicine-category">COVID Essentials</p>
+                  </div>
+                  
+              </div>
+          </section>
+  
+          <!-- Medicine Category Section End -->
+  
+  
+          <!-- Featured Medicine Section Start -->
+          
+          <section class="container med_home_con">
+              <h2 class="section-title">Featured Medicines</h2>
+              <div class="medicines" id="medicines">
+                {% for m in medicine %}
+                    <div class="medicine" id="medicine">
+                        <div class="medicine-banner">
+                            {% if m.medicine_image %}
+                            <div class="med_image">
+                                <img src="{{ m.medicine_image.url }}" alt="{{ m.medicine_title }}">
+                            </div>  
+                            {% else %}
+                                <div class="med_image">
+                                    <p>No image available</p>
+                                </div>  
+                            {% endif %}
+        
+                        </div>
+                        <div class="medicine-detail">
+                            <h3 class="medicine-title">{{ m.medicine_title }}</h3>
+                            <p class="medicine-company"><strong>Company:</strong> {{ m.medicine_company_name }}</p>
+                            <p class="medicine-quantity">Pack of 30 tablets</p>
+                            <p class="medicine-price"><strong>Price:</strong> ৳ {{ m.medicine_price }}</p>
+                            <p><strong>Description:</strong> {{ m.medicine_description }}</p>
+                            <div class="medicine-info">
+                                <div>
+                                    <i class="fa-solid fa-star filled"></i>
+                                    <i class="fa-solid fa-star filled"></i>
+                                    <i class="fa-solid fa-star filled"></i>
+                                    <i class="fa-solid fa-star filled"></i>
+                                    <i class="fa-solid fa-star empty"></i>
+                                    <span>(4.5)</span>
+                                </div>
+                            </div>
+                            <div class="medicine_button">
+                                <a href="{% url 'product_order_page' m.id %}" class="order_btn med_btn">Order Now</a>
+                                <a href="{% url 'add_to_cart' m.id%}" class="add_cart_btn med_btn">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+          </section>
+  
+          <!-- Featured Medicine Section End -->
+  
+      </main>
+      
+  
+      <!-- Appointment Section Start -->
+  
+      <div class="appointment-section">
+          <div class="call-box">
+            <img
+              class="appointment-logo"
+              src="./others pic/phone-call.png"
+              alt=""
+            />
+            <div>
+              <h6>GET A FREE CONSULTATION</h6>
+              <h1>Help Line: 01700557754</h1>
+            </div>
+          </div>
+          <div class="apointment-descript">
+            <p>
+              "Unlock expert advice and insights with our complimentary 'Get a Free Consultation' service. Elevate your decision-making process by accessing tailored guidance from our seasoned professionals at no cost to you."
+            </p>
+          </div>
+          <div class="appointment-button">
+            <button><i class="fa-solid fa-download"></i>Upload Prescription</button>
+          </div>
+        </div>
+  
+        <!-- Appointment Section End -->
+  
+      
+    
+      <!-- Blogs and Healthcare Section Start -->
+  
+      <div class="blog-container">
+        <div class="blog-box">
+          <h1 class="blogs-title">
+            <span class="banner-title-digital">Blogs</span> & Healthcare Articles
+          </h1>
+          <p class="description-blog">
+            "Embrace the healing power of self-care, for a healthy you radiates positive energy to the world. Prioritize your well-being because a healthy life is a wealth of its own."
+          </p>
+        </div>
+        <div class="blogs">
+          {% for b in blog %}
+            <div class="blog">
+                <img class="blog-img" src="{{ b.blog_image.url }}" alt="" />
+                <div class="blog-text">
+                    <h3 class="blog-title">
+                        {{ b.blog_title }}
+                    </h3>
+                    <p class="blog-description">
+                        {{ b.blog_article }}
+                        <a href="">See more</a>
+                    </p>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- Blogs and Healthcare Section End -->
+
+      <header class="contact_head">
+        <h1 class="contact_head_title">Contact Us</h1>
+    </header>
+
+    <section class="contact-section">
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form action="{% url 'contact_page' %}" method="post">
+                {% csrf_token %}
+                <label class="contact_lebel" for="name">Your Name:</label>
+                <input class="contact_input" type="text" id="name" name="name" required>
+
+                <label class="contact_lebel" for="email">Your Email:</label>
+                <input class="contact_input" type="email" id="email" name="email" required>
+
+                <label class="contact_lebel" for="message">Your Message:</label>
+                <textarea class="contact_input" id="message" name="message" rows="4" required></textarea>
+
+                <button class="contact_button" type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>Email: info@dipti.com</p>
+            <p>Phone: +8801700557754</p>
+            <p>Phone: +8801700254554</p>
+            <p>Address: Dhanmondi-27, Dhaka, Bangladesh</p>
+ 	    <div class="social-icons">
+                <a href="#" target="_blank"><i class="fa-brands fa-facebook"> </i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-instagram"> </i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"> </i></a>
+		<a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"> </i> </a>
+		<a href="#" target="_blank"><i class="fa-brands fa-youtube"></i> </a>
+
+            </div>
+        </div>
+           
+    </section>
+
+    {% include 'user_file/user_footer.html' %}
+</body>
+</html>

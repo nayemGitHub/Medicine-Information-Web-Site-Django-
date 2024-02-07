@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Blog</title>
+        <script src="https://kit.fontawesome.com/3c48e661fe.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../../static/user/styles/style.css">
+        <link rel="stylesheet" href="../../static/user/styles/responsib.css">
+        <link rel="stylesheet" href="../../static/user/styles/navbar.css">
+        <link rel="stylesheet" href="../../static/user/styles/blgo.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+        </style>
+        <script>
+            // your_blog_script.js
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Wait for the DOM content to be fully loaded
+
+    // Find all "See more" links by their class name
+    var seeMoreLinks = document.querySelectorAll('.blog-description a');
+
+    // Attach a click event listener to each "See more" link
+    seeMoreLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            // Prevent the default behavior of the link
+            event.preventDefault();
+
+            // Find the corresponding blog text container
+            var blogText = link.closest('.blog-text');
+
+            // Toggle the visibility of the full blog article
+            blogText.classList.toggle('show-full-article');
+        });
+    });
+});
+
+        </script>
+    </head>
+<body>
+    {% include 'user_file/user_navbar.html' %}
+    {% block content %}
+      
+    <div class="blog-container">
+        <div class="blog-box">
+            <h1 class="blogs-title">
+                <span class="banner-title-digital">Blogs</span> & Healthcare Articles
+            </h1>
+            <p class="description-blog">
+                "Embrace the healing power of self-care, for a healthy you radiates positive energy to the world. Prioritize your well-being because a healthy life is a wealth of its own."
+            </p>
+            </div>
+            {% for b in blog %}
+                <div class="blog">
+                    <img class="blog-img" src="{{ b.blog_image.url }}" alt="" />
+                    <div class="blog-text">
+                        <h3 class="blog-title">
+                            {{ b.blog_title }}
+                        </h3>
+                        <p class="blog-description">
+                            {{ b.blog_article }}
+                             <a href="">See more</a>
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
+    {% include 'user_file/user_footer.html' %}
+</body>
+</html>

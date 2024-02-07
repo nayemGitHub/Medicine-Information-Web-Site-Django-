@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Medicine</title>
+        <script src="https://kit.fontawesome.com/3c48e661fe.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../../static/user/styles/style.css">
+        <link rel="stylesheet" href="../../static/user/styles/responsib.css">
+        <link rel="stylesheet" href="../../static/user/styles/navbar.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+        </style>
+        <script>
+            
+        </script>
+    </head>
+<body>
+    {% include 'user_file/user_navbar.html' %}
+    {% block content %}
+
+    <div class="medicines" id="medicines">
+        {% for m in medicine %}
+            <div class="medicine" id="medicine">
+                <div class="medicine-banner">
+                    {% if m.medicine_image %}
+                    <div class="med_image">
+                        <img src="{{ m.medicine_image.url }}" alt="{{ m.medicine_title }}">
+                    </div>  
+                    {% else %}
+                        <div class="med_image">
+                            <p>No image available</p>
+                        </div>  
+                    {% endif %}
+
+                </div>
+                <div class="medicine-detail">
+                    <h3 class="medicine-title">{{ m.medicine_title }}</h3>
+                    <p class="medicine-company"><strong>Company:</strong> {{ m.medicine_company_name }}</p>
+                    <p class="medicine-quantity">Pack of 30 tablets</p>
+                    <p class="medicine-price"><strong>Price:</strong> ৳ {{ m.medicine_price }}</p>
+                    <p><strong>Description:</strong> {{ m.medicine_description }}</p>
+                    <div class="medicine-info">
+                        <div>
+                            <i class="fa-solid fa-star filled"></i>
+                            <i class="fa-solid fa-star filled"></i>
+                            <i class="fa-solid fa-star filled"></i>
+                            <i class="fa-solid fa-star filled"></i>
+                            <i class="fa-solid fa-star empty"></i>
+                            <span>(4.5)</span>
+                        </div>
+                    </div>
+                    <div class="medicine_button">
+                        <a href="{% url 'product_order_page' m.id %}" class="order_btn med_btn">Order Now</a>
+                        <a href="{% url 'add_to_cart' m.id%}" class="add_cart_btn med_btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% endblock %}
+    {% include 'user_file/user_footer.html' %}
+</body>
+</html>

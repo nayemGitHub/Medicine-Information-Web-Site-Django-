@@ -1,0 +1,14 @@
+.search_med_info {
+    margin: auto;
+    display: inline-block;
+}
+h1.search_result_title {
+    text-align: center;
+}
+
+p.search_result_text {
+    text-align: center;
+}
+form#search_form {
+    display: inline-block;
+}

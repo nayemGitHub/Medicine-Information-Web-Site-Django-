@@ -1,0 +1,26 @@
+{% block content %}
+<header class="admin_header">
+    <div class="admin_container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'admin_home_page' %}">Home</a></li>
+                <li><a href="{% url 'add_medicine' %}">Add Medicine</a></li>
+                <li><a href="{% url 'add_blog' %}">Add Blog</a></li>
+                <li><a href="{% url 'view_medicine_info' %}">View Medicine Information</a></li>
+                <li><a href="{% url 'view_blog' %}">View Blog</a></li>
+                <li><a href="http://127.0.0.1:8000/" target="_blank">Web Site</a></li>
+                <div class="search-container">
+                    <form action="" method="get" class="search_box">
+                        <input type="text" name="query" class="search-input" placeholder="Enter your search query" required>
+                        <button type="submit" class="search-button">Search</button>
+                    </form>
+                </div>
+                <li style="float: right;"><a href="{% url 'admin_logout' %}">Logout</a></li>
+                <li style="float: right;"><a href="{% url 'admin_profile' request.user.id %}">Profile</a></li>
+
+            </ul>
+
+        </nav>
+    </div>
+</header>
+{% endblock %}

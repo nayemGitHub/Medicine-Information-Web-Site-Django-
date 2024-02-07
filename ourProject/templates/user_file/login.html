@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medicine</title>
+    <script src="https://kit.fontawesome.com/3c48e661fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../static/user/styles/style.css">
+    <link rel="stylesheet" href="../../static/user/styles/login.css">
+    <link rel="stylesheet" href="../../static/user/styles/responsib.css">
+    <link rel="stylesheet" href="../../static/user/styles/navbar.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const passwordField = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
+
+    if (togglePassword) {
+        togglePassword.addEventListener('click', function () {
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+
+            // Change eye icon based on password visibility
+            if (type === 'password') {
+                togglePassword.classList.remove('fa-eye-slash');
+                togglePassword.classList.add('fa-eye');
+            } else {
+                togglePassword.classList.remove('fa-eye');
+                togglePassword.classList.add('fa-eye-slash');
+            }
+        });
+    }
+});
+
+    </script>
+</head>
+<body>
+{% include 'user_file/user_navbar.html' %}
+{% block content %}
+<div class="login-container">
+    <h2>Login</h2>
+    <form class="login-form" action="{% url 'user_login_page' %}", method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <!-- <label for="username">Username:</label> -->
+            <input type="text" id="username" placeholder="Username" name="username" required>
+        </div>
+        <div class="form-group">
+            <!-- <label for="password">Password:</label> -->
+            <input type="password" id="password" placeholder="Password" name="password" required >
+            <i class="far fa-eye eyeIcon" id="togglePassword"></i>
+        </div>
+        <div class="form-group">
+            <button type="submit">Login</button>
+        </div>
+        <div class="signUpLink"><a href="{% url 'user_signup_page' %}">Registation</a></div>
+    </form>
+</div>
+{% endblock %}
+{% include 'user_file/user_footer.html' %}
+</body>
+</html>

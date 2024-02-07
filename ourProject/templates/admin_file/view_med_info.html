@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/admin/style.css">
+    <title>View Medicine Information</title>
+    <style>
+    .medicine-card {
+    width: 230px;
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    float: left;
+    height: 370px;
+}
+.med_image {
+    margin: auto;
+    width: 180px;
+}
+.medicine-card img {
+    width: 175px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 175px;
+    margin: auto;
+}
+
+.medicine-card h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.medicine-card p {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.medicine-card strong {
+    font-weight: bold;
+}
+
+.edit_delete_btn {
+    margin-top: 25px;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.edit-button, .delete-button {
+    display: inline-block;
+    padding: 4px 8px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-button {
+    background-color: #336699;
+}
+
+.delete-button {
+    background-color: #ff3333;
+}
+
+</style>
+</head>
+<body>
+    {% include 'admin_file/admin_navbar.html' %}
+    {% block content %}
+    <section class="admin_container">
+        {% for m in medicine %}
+            <div class="medicine-card">
+                {% if m.medicine_image %}
+                <div class="med_image">
+                    <img src="{{ m.medicine_image.url }}" alt="{{ m.medicine_title }}">
+                </div>  
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
+                <h2>{{ m.medicine_title }}</h2>
+                <p><strong>Company:</strong> {{ m.medicine_company_name }}</p>
+                <p><strong>Price:</strong> ৳ {{ m.medicine_price }}</p>
+                <p><strong>Description:</strong> {{ m.medicine_description }}</p>
+                <!-- Add more details or styling as needed -->
+                <!-- Edit and Delete Buttons -->
+                <div class="edit_delete_btn">
+                    <a href="{% url 'update_med_info' m.id %}" class="edit-button">Edit</a>
+                    <a href="{% url 'delete_med_info' m.id %}" class="delete-button">Delete</a>
+                </div>
+                <!-- End of Edit and Delete Buttons -->
+            </div>
+        {% endfor %}
+    </section>
+    {% endblock %}
+    {% include 'admin_file/admin_footer.html' %}
+</body>
+</html>

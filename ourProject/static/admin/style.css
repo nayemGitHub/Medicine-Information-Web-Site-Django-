@@ -1,0 +1,249 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    margin-bottom: 100px;
+
+
+}
+.admin_header{
+    background-color: #b7d8ff;
+}
+.admin_container{
+    width: 1170px;
+    margin: auto;
+
+}
+
+.navbar {
+    background-color: #b7d8ff;
+    overflow: hidden;
+ 
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 15px;
+}
+
+.navbar a:hover {
+    background-color: #a5c6ed;
+}
+
+.navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Add a border to separate navbar items */
+.navbar li {
+    border-right: 1px solid #bbb;
+}
+
+/* Remove the border from the last item */
+.navbar li:last-child {
+    border-right: none;
+}
+
+
+
+/* Add medicine form css start */
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 550px;
+    border: 1px solid #8d8b8b;
+}
+.medicine_h1 {
+    color: #336699;
+    text-align: center;
+}
+.add_med_form {
+    margin: 0 auto;
+    max-width: 550px;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+.medicine_form-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+.medicine_form-textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+.medicine_form-file {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.medicine_button {
+    background-color: #336699;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+/* Add medicine form css end */
+
+
+/*search css start  */
+.search-form {
+    text-align: center;
+}
+
+.search-input {
+    padding: 5px;
+    font-size: 15px;
+}
+
+.search-button {
+    padding: 5px 8px;
+    font-size: 15px;
+    cursor: pointer;
+    background: beige;
+    border: 1px solid #767676;
+}
+.search_box {
+    width: 300px;
+    display: inline;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 6px;
+    margin-left: 22px;
+}
+/*search css start  */
+
+
+
+
+
+
+/* view medicine information css card start */
+.medicine-card {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.medicine-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.medicine-card h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.medicine-card p {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.medicine-card strong {
+    font-weight: bold;
+}
+/* view medicine information css card end */
+
+
+/* view blog css start */
+
+/* view blog css end */
+
+
+
+
+/* Admin Profile css start */
+.admin_profile-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+.admin_profile-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.admin_profile-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.admin_profile-role {
+    color: #777;
+    margin-bottom: 10px;
+}
+.admin_profile-contact {
+    font-size: 0.9em;
+    color: #333;
+}
+/* Admin Profile css end */
+
+
+
+
+
+
+
+
+
+
+
+/* Your existing styles go here */
+
+.footer {
+    background-color: #0f1f32;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Add some styling to the paragraph inside the footer */
+.footer p {
+    margin: 0;
+}

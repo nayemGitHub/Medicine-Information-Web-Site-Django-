@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Medicine Information</title>
+    <link rel="stylesheet" href="../../static/admin/style.css">
+</head>
+<body>
+{% include 'admin_file/admin_navbar.html' %}
+{% block content %}
+<section class="admin_container">
+    <div class="form-container">
+        <h1 class="medicine_h1">Update Blog</h1>
+        {% for b in ub %}
+        <form method="post" action="{% url 'add_blog' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="medicineName">Blog Title:</label>
+            <input type="text" id="medicineName" name="blog_title" class="medicine_form-input" required value="{{ b.blog_title }}">
+
+            <label for="descriptions">Blog Article:</label>
+            <textarea id="descriptions" name="blog_article" class="medicine_form-textarea" rows="4" required>{{ b.blog_article }}</textarea>
+
+            <label for="image" class="form-file">Upload Blog Image:</label>
+            <input type="file" id="image" name="blog_image" class="medicine_form-file" accept="image/*">
+
+            <button type="submit" class="medicine_button">Submit</button>
+        </form>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+{% include 'admin_file/admin_footer.html' %}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

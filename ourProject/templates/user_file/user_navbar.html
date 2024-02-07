@@ -1,0 +1,35 @@
+{% block content %}
+  <header class="header">
+      <!-- Navbar start -->
+        <nav class="navbar">
+            <h2 class="nav-logo">Med-Pharma</h2>
+            <div class="nav-part">
+                <a href="{% url 'home_page' %}">Home</a>
+                <a href="{% url 'category_page' %}">Catagories</a>
+                <a href="{% url 'medicine_page' %}">Medicine</a>
+                <a href="{% url 'blog_page' %}">Blog</a>
+                <a href="{% url 'about_page' %}">About</a>
+                <a href="{% url 'contact_page' %}">Contact Us</a>
+            </div>
+            <div class="search-bar cart">
+            <!-- Place this code wherever you want the search form to appear, e.g., in your template -->
+            <form id="search_form" action="{% url 'search_results' %}" method="get">
+                <input type="text" placeholder="Search medicine & Blog" name="search">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="login-register">
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'user_profile' request.user.id %}"><button>Profile</button></a>
+                <a href="{% url 'user_logout' %}"><button>Log Out</button></a>
+                {% else %}
+                <a href="{% url 'user_login_page' %}"><button>Login</button></a>
+                <a href="{% url 'user_signup_page' %}"><button>Register</button></a>
+                {% endif %}
+            </div>
+        </nav>
+        <!-- End navbar -->
+    </header>
+{% endblock %}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart - Medicine Details</title>
+    <style>
+        /* Your CSS styles go here */
+        body {
+            font-family: 'popins', sans-serif;
+        }
+
+        .section-one {
+            background-color: #f7f4e1;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 60px;
+            color: #002e3d;
+            
+        }
+        .medicine-details {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
+        }
+
+        .medicine-details img {
+            width: 260px;
+            margin-right: 20px;
+        }
+
+        .price{
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(172, 42, 42);
+        }
+
+
+        .quantity-options {
+            margin-bottom: 20px;
+        }
+        .shop_check {
+    margin-top: 25px;
+}
+
+
+        .add-to-cart-btn {
+            padding: 10px;
+            background-color: #4c96af;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+        .shop-more-btn {
+            padding: 10px 20px;
+            background-color: #4cc5ea;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+
+        .product-info {
+            width: 1070px;
+            margin: auto;
+
+        }
+        .product-info-parts{
+            margin-bottom: 40px;
+            background-color: #ffffff;
+            padding: 20px;
+            margin-top: 0;
+            
+        }
+        .headilnes{
+            background-color: #dde4e5;
+            padding: 20px;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <section class="section-one">
+        {% for a in ac %}
+        <div class="medicine-details">
+            <img src="{{ a.medicine_image.url }}" alt="{{ m.medicine_title }}">
+            <div class="medicine-info">
+                <h2>{{ a.medicine_title }}</h2>
+                <p><a href="">Generics:Paracetamol 500mg</a></p>
+                <p><a href=""><strong>Company:</strong> {{ a.medicine_company_name }}</a></p>
+                <p class="price"><strong>Price:</strong> ৳ {{ a.medicine_price }}</p>
+            </div>
+            <div class="quantity-options">
+                <h3 class="quantity-title">Quantity</h3>
+                <div>
+                    <label>
+                    <input type="radio" name="quantity" value="1pc" checked>
+                     1pc
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </label>
+                </div>
+    
+                <div>
+                    <label>
+                    <input type="radio" name="quantity" value="1strip">
+                     1strip (1 strip = 10pcs)
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </label>
+                </div>
+    
+                <div>
+                    <label>
+                    <input type="radio" name="quantity" value="1box">
+                     1box (1 box = 3 strips)
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </label>
+                </div>
+                <div class="shop_check">
+                    <a href="{% url 'product_order_page' a.id %}" class=" add-to-cart-btn">Checkout</a>
+                    <a href="{% url 'medicine_page' %}" class="shop-more-btn">Shop More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+    <section class="section-two">
+
+        <div class="product-info">
+        <h2 class="product-info-title">Additional Information</h2>
+        <div>
+            <h3 class="headilnes">Indications</h3>
+            <p class="product-info-parts">Napa is indicated for fever, common cold and influenza, headache, toothache, earache, body pain, myalgia, neuralgia, dysmenorrhoea, sprains, colic pain, back pain, post-operative pain, postpartum pain, inflammatory pain, and post-vaccination pain in children. It is also indicated for rheumatic & osteoarthritic pain and stiffness of joints.</p>
+        </div>
+        <div>
+            <h3 class="headilnes">Pharmacology</h3>
+            <p class="product-info-parts">Napa has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa is one of the most widely used, safest and fast-acting analgesics. It is well tolerated and free from various side effects of aspirin.
+            </p>
+        </div>
+        <div>
+            <h3 class="headilnes">Dosage & Administration</h3>
+            <p class="product-info-parts">Adult: 1-2 tablets every 4 to 6 hours up to a maximum of 4 gm (8 tablets) daily.
+                Children (6-12 years): ½ to 1 tablet 3 to 4 times daily. For long-term treatment, it is wise not to exceed the dose beyond 2.6 gm/day.</p>
+        </div>
+        <div>
+            <h3 class="headilnes">Contraindications</h3>
+            <p class="product-info-parts">It is contraindicated in known hypersensitivity to Napa.</p>
+        </div>
+        <div>
+            <h3 class="headilnes">Side-effects</h3>
+            <p class="product-info-parts">Side effects of Napa are usually mild, though hematological reactions including thrombocytopenia, leucopenia, pancytopenia, neutropenia, and agranulocytosis have been reported. Pancreatitis, skin rashes, and other allergic reactions occur occasionally.</p>
+        </div>
+        <div>
+            <h3 class="headilnes">Pregnancy & Lactation
+            </h3>
+            <p class="product-info-parts">Pregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed.</p>
+        </div>
+        </div>
+    </section>
+
+</body>
+</html>

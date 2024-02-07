@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Medicine</title>
+        <script src="https://kit.fontawesome.com/3c48e661fe.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../../static/user/styles/style.css">
+        <link rel="stylesheet" href="../../static/user/styles/responsib.css">
+        <link rel="stylesheet" href="../../static/user/styles/navbar.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+        </style>
+        <script>
+            
+        </script>
+    </head>
+<body>
+    {% include 'user_file/user_navbar.html' %}
+    {% block content %}
+
+   <!-- Medicine Category Section start -->
+  
+   <section class="medicine-categories">
+    <h3 class="section-title">Medicine Categories</h3>
+    <div class="medicine-container1">
+        <div class="medicine" id="category">
+            <img src="../../static/user/Category pic/Prescription.jpg" alt="Medicine 1">
+            <p class="medicine-category">Prescription Medications</p>
+        </div>
+        <div class="medicine" id="category">
+            <img src="../../static/user/Category pic/otc.jpg" alt="Medicine 2">
+            <p class="medicine-category">OTC Medications</p>
+        </div>
+        <div class="medicine" id="category">
+            <img src="../../static/user/Category pic/women care.jpg" alt="Medicine 3">
+            <p class="medicine-category">Women's Health</p>
+        </div>
+        <div class="medicine" id="category">
+            <img src="../../static/user/Category pic/baby care.jpg" alt="Medicine 4">
+            <p class="medicine-category">Baby and Child Care</p>
+        </div>
+        <div class="medicine" id="category">
+            <img src="../../static/user/Category pic/diabetic.jpg" alt="Medicine 5">
+            <p class="medicine-category">Diabatics Care</p>
+        </div>
+        <div class="medicine" id="category">
+            <img src="../../static/user/Category pic/dental.jpg" alt="Medicine 6">
+            <p class="medicine-category">Dental Solution</p>
+        </div>
+        <div class="medicine" id="category">
+            <img src="../../static/user/Category pic/health device.jpg" alt="Medicine 1">
+            <p class="medicine-category">Health Devices & Equipments</p>
+        </div>
+        <div class="medicine" id="category">
+            <img src="../../static/user/Category pic/wellness.jpg" alt="Medicine 2">
+            <p class="medicine-category">Wellness and Personal Care</p>
+        </div>
+        <div class="medicine" id="category">
+            <img src="../../static/user/Category pic/skincare.jpg" alt="Medicine 3">
+            <p class="medicine-category">Beauty Products</p>
+        </div>
+        <div class="medicine" id="category">
+            <img src="../../static/user/Category pic/herval.jpg" alt="Medicine 4">
+            <p class="medicine-category">Alternative and Herbal Remedies</p>
+        </div>
+        <div class="medicine" id="category">
+            <img src="../../static/user/Category pic/pet.jpg" alt="Medicine 5">
+            <p class="medicine-category">Pet Medications</p>
+        </div>
+        <div class="medicine" id="category">
+            <img src="../../static/user/Category pic/covid.jpg" alt="Medicine 6">
+            <p class="medicine-category">COVID Essentials</p>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Medicine Category Section End -->
+
+    {% endblock %}
+    {% include 'user_file/user_footer.html' %}
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* signup Page css start */
+
+.login-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 20px;
+    width: 500px !important;
+    text-align: center;
+    border: 0px solid #b6d9fb;
+    box-shadow: 0px 0px 5px 0px;
+    margin: auto;
+}
+div#signup{
+    margin: 50px 425px !important;
+}
+.login-container h2 {
+    color: #4e9eed;
+    font-size: 25px;
+    margin: 35px;
+}
+
+.login-form {
+    margin-top: 20px;
+    padding: 8px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+    float: left;
+    margin-top: 10px;
+    color: #000000;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 9px;
+    box-sizing: border-box;
+    border: 1px solid #585656;
+    border-radius: 25px;
+    font-size: 14px;
+    box-shadow: 1px 1px 4px 0px #4e9eed;
+    padding-left: 18px;
+}
+
+.form-group button {
+    background-color: #4e9eed;
+    color: #f9eeee;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 0px;
+    box-shadow: 1px 1px 4px 0px black;
+}
+
+
+.loginLink {
+    font-size: 20px;
+}
+.loginLink a:hover{
+    color: rgb(1, 1, 176);
+}
+.form-group button:hover {
+    background-color: #5050ad;
+}
+.eyeIcon{
+margin-left: -34px;
+cursor: pointer;
+margin-top: 12px;
+position: absolute;
+color: #5a5a5a;
+} 
+/* signup Page css end */

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Blog</title>
+        <script src="https://kit.fontawesome.com/3c48e661fe.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../../static/user/styles/style.css">
+        <link rel="stylesheet" href="../../static/user/styles/responsib.css">
+        <link rel="stylesheet" href="../../static/user/styles/navbar.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+            .admin_profile-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+.admin_profile-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.admin_profile-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.admin_profile-role {
+    color: #777;
+    margin-bottom: 10px;
+}
+.admin_profile-contact {
+    font-size: 0.9em;
+    color: #333;
+}
+        </style>
+        <script>
+            // your_blog_script.js
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Wait for the DOM content to be fully loaded
+
+    // Find all "See more" links by their class name
+    var seeMoreLinks = document.querySelectorAll('.blog-description a');
+
+    // Attach a click event listener to each "See more" link
+    seeMoreLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            // Prevent the default behavior of the link
+            event.preventDefault();
+
+            // Find the corresponding blog text container
+            var blogText = link.closest('.blog-text');
+
+            // Toggle the visibility of the full blog article
+            blogText.classList.toggle('show-full-article');
+        });
+    });
+});
+
+        </script>
+    </head>
+<body>
+    {% include 'user_file/user_navbar.html' %}
+    {% block content %}
+    <section class="admin_container">
+        
+        <div class="admin_profile-card ">
+            <div class="admin_profile-name">{{prof.users_full_name}}</div>
+            <div class="admin_profile-role">{{prof.user_username}}</div>
+            <div class="admin_profile-contact">
+                <p class="admin_profile_email">{{prof.user_email}}</p>
+                <p>{{prof.user_phone_number}}</p>
+                
+            </div>
+           
+        </div>
+    </section>
+    {% endblock %}
+    {% include 'user_file/user_footer.html' %}
+</body>
+</html>

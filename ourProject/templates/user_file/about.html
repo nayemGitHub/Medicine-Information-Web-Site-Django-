@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <title>About</title>
+        <script src="https://kit.fontawesome.com/3c48e661fe.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../../static/user/styles/style.css">
+        <link rel="stylesheet" href="../../static/user/styles/about.css">
+        <link rel="stylesheet" href="../../static/user/styles/responsib.css">
+        <link rel="stylesheet" href="../../static/user/styles/navbar.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+        </style>
+
+        <script>
+            // your_about_script.js
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Wait for the DOM content to be fully loaded
+
+    // Find all team member sections by their class name
+    var teamMemberSections = document.querySelectorAll('.team-member');
+
+    // Attach a click event listener to each team member section
+    teamMemberSections.forEach(function (section) {
+        section.addEventListener('click', function () {
+            // Toggle the visibility of the social icons within the clicked team member section
+            var socialIcons = section.querySelector('.social-icons');
+            socialIcons.classList.toggle('show-social-icons');
+        });
+    });
+});
+
+        </script>
+    </head>
+<body>
+    {% include 'user_file/user_navbar.html' %}
+    {% block content %}
+    <section class="about-section">
+        <h2>About Us</h2>
+        <p>
+            Welcome to Med-Pharma, our mission is to empower individuals
+            to take control of their health and well-being by providing convenient
+            access to a wide range of high-quality medicines and healthcare essentials.
+            We are committed to revolutionizing the online pharmacy experience, ensuring affordability,
+            reliability, and personalized care for every customer. We prioritize
+            the needs and well-being of our customers. Our commitment is to 
+            provide a seamless and user-friendly platform, ensuring a convenient 
+            and reliable shopping experience for all.
+        </p>
+
+    </section>
+
+    <section class="about-section">
+   <h2 class="team_title"> Team Members</h2>
+        <p>
+	   Our dedicated team of healthcare professionals, pharmacists,
+ 	   and technology experts work together to ensure that you receive the
+ 	   best possible information and services. We are committed to promoting health and well-being in the community.
+	</p>
+          <div class="team-member">
+            <img src="../../../../static/user/about_img/deepa.png" alt="Deepa Profile Pic">
+            <h2 class="team_member_name">Deepanita Deepa/h2>
+            <p class="team_member_post">Web Developer & UI/UX Desinger</p>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fa-brands fa-facebook"> </i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-instagram"> </i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"> </i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"> </i> </a>
+                <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i> </a>
+            </div>
+        </div>
+
+          <div class="team-member">
+            <img src="../../../../static/user/about_img/ema.png " alt="Ema Profile Pic">
+            <h2 class="team_member_name">Tajniha Taha Ema</h2>
+            <p class="team_member_post">Full Stack Web Developer(Python-Djanog)</p>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fa-brands fa-facebook"> </i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-instagram"> </i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"> </i></a>
+		<a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"> </i> </a>
+		<a href="#" target="_blank"><i class="fa-brands fa-youtube"></i> </a>
+            </div>
+        </div>
+
+          <div class="team-member">
+            <img src="../../../../static/user/about_img/ahala.png " alt="Ahala Profile Pic">
+            <h2 class="team_member_name">Kazi Aahala Nagary</h2>
+            <p class="team_member_post">Web Desinger & UI/UX Desinger</p>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fa-brands fa-facebook"> </i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-instagram"> </i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"> </i></a>
+		<a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"> </i> </a>
+		<a href="#" target="_blank"><i class="fa-brands fa-youtube"></i> </a>
+            </div>
+        </div>
+
+
+ 
+          <div class="team-member">
+            <img src="../../../../static/user/about_img/nayem.png" alt="Nayem Profile Pic">
+            <h2 class="team_member_name">Md. Nayem</h2>
+            <p class="team_member_post">Full Stack Web Developer(Python)</p>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fa-brands fa-facebook"> </i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-instagram"> </i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"> </i></a>
+		<a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"> </i> </a>
+		<a href="#" target="_blank"><i class="fa-brands fa-youtube"></i> </a>
+            </div>
+        </div>
+
+    </section>
+    {% endblock %}
+    {% include 'user_file/user_footer.html' %}
+</body>
+</html>

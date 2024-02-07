@@ -1,0 +1,75 @@
+/* Blogs and Healthcare Articles Section Start */
+
+.blogs-title{
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 5px;
+}
+.blog-box{
+    text-align: center;
+    margin-top:30px;
+}
+.description-blog{
+    font-size:22px;
+    width: 50%;
+    margin: auto;
+}
+
+
+.blog{
+    width: 430px;
+    height: 450px;
+    background:white;
+    box-shadow: 4px 4px 8px gray;
+    border-radius:10px;
+    /* float: left; */
+    margin: 20px;
+    overflow: hidden;
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 550px;
+    margin-left: 150px;
+}
+.blog-img{
+    width:350px;
+    height: 230px;
+    border-radius: 10px;
+    padding-bottom: px;
+    margin: auto;
+    border: 1px solid beige;
+    margin-left: 37px;
+    margin-top: 25px;
+}
+.blog-text{
+    padding: 5px 15px;
+}
+.blog-title{
+    font-size:18px;
+    font-weight: 600;
+    color: rgb(54, 53, 53);
+}
+.blog-description{
+    font-size:14px;
+    color: rgb(76, 72, 72);
+    margin-top: 15px;
+}
+.blogs {
+    margin-top: 35px;
+    padding: 40px;
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 145px;
+}
+.blog {
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog:hover {
+    transform: scale(1.05);
+}
+
+/* Blogs and Healthcare Articles Section End */

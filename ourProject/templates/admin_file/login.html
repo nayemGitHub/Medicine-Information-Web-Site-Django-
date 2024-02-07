@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://kit.fontawesome.com/98b27ea401.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover; /* Use cover for a better background image fit */
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 20px;
+    max-width: 400px; /* Set a maximum width for better readability on larger screens */
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 0px 5px 0px;
+}
+
+/* ... (Other styles remain the same) */
+
+@media screen and (max-width: 600px) {
+    /* Adjust styles for smaller screens */
+    .login-container {
+        border-radius: 0;
+    }
+
+    .form-group button {
+        border-radius: 0;
+    }
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 20px;
+            width: 280px;
+            text-align: center;
+            border: 0px solid #b6d9fb;
+            box-shadow: 0px 0px 5px 0px;
+        }
+
+        .login-container h2 {
+            color: #4e9eed;
+            font-size: 25px;
+            margin: 35px;
+        }
+
+        .login-form {
+            margin-top: 20px;
+            padding: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+            float: left;
+            margin-top: 10px;
+            color: #000000;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 9px;
+            box-sizing: border-box;
+            border: 1px solid #585656;
+            border-radius: 25px;
+            font-size: 14px;
+            box-shadow: 1px 1px 4px 0px #4e9eed;
+            padding-left: 18px;
+        }
+
+        .form-group button {
+            background-color: #4e9eed;
+            color: #f9eeee;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            border-radius: 20px;
+            margin-top: 0px;
+            box-shadow: 1px 1px 4px 0px black;
+        }
+
+        .form-group button:hover {
+            background-color: #5050ad;
+        }
+
+        .signUpLink {
+            font-size: 16px;
+        }
+        .signUpLink a:hover{
+            color: rgb(1, 1, 176);
+        }
+        
+        .eyeIcon{
+        margin-left: -40px;
+        cursor: pointer;
+        margin-top: 12px;
+        position: absolute;
+        color: #5a5a5a;
+        } 
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <form class="login-form" action="{% url 'admin_login_page' %}", method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <!-- <label for="username">Username:</label> -->
+                <input type="text" id="username" placeholder="Username" name="username" required>
+            </div>
+            <div class="form-group">
+                <!-- <label for="password">Password:</label> -->
+                <input type="password" id="password" placeholder="Password" name="password" required >
+                <i class="far fa-eye eyeIcon" id="togglePassword"></i>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+            <div class="signUpLink"><a href="{% url 'admin_signup_page' %}">Registation</a></div>
+        </form>
+    </div>
+</body>
+</html>
