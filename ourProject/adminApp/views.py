@@ -5,6 +5,8 @@ from adminApp.models import *
 
 
 # Create your views here.
+# Create your views here.
+print("hi")
 
 # after the admin Registations submited message page ------start
 @login_required
